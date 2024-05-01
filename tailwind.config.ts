@@ -14,6 +14,12 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontFamily: {
+       "gotham-black": "gotham-black",
+       "gotham-bold": "gotham-bold",
+       "gotham-book": "gotham-book",
+       "gotham-light": "gotham-light",
+    },
     colors: {
       'dark-grey': '#333333',
       'light-grey': '#808080',

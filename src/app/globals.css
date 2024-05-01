@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'gotham-black';
+  font-weight: normal;
+  src: url('../../public/_material/fonts/gotham-black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'gotham-bold';
+  font-weight: normal;
+  src: url('../../public/_material/fonts/gotham-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'gotham-book';
+  font-weight: normal;
+  src: url('../../public/_material/fonts/gotham-book.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'gotham-light';
+  font-weight: normal;
+  src: url('../../public/_material/fonts/gotham-light.woff2') format('woff2');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
