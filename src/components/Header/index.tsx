@@ -11,7 +11,7 @@ export default function Header() {
             <div className='mt-12 flex justify-center '>
                 <div className='w-1/2'>
                      <h1 className='font-gotham-bold text-4xl py-4'>REABERTURA <br/> SMART FIT</h1>
-                     <div className='bg-black border-4 w-20 z-10'/>
+                     <div className='bg-black border-4 w-20 z-10 my-2'/>
                      <p className='py-4'>
                      O horário de funcionamento das nossas unidades está seguindo os decretos de cada município.
                      Por isso, confira aqui se a sua unidade está aberta e as medidas de segurança que estamos seguindo.
