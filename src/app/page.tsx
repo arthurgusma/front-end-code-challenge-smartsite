@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { ApiResponse } from "../types/DataAPI";
 
 export default async function Home() {
@@ -6,9 +7,7 @@ export default async function Home() {
     
   return (
     <main>
-      {locations.map((local)=>{
-        return <p key={local.id}>{local.city_name}</p>;
-      })}
+      <Header/>
     </main>
   );
 }
