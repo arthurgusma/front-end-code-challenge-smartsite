@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ApiResponse } from "../types/DataAPI";
 
@@ -8,6 +9,7 @@ export default async function Home() {
   return (
     <main>
       <Header/>
+      <Footer />
     </main>
   );
 }
