@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
@@ -21,13 +22,12 @@ const config: Config = {
        "gotham-light": "gotham-light",
     },
     colors: {
+      ...colors,
       'dark-grey': '#333333',
       'light-grey': '#808080',
       'yellow': '#FFB612',
       'red': '#dc0a17',
       'green': '#2FC022',
-      'black': '#000',
-      'white': '#FFF',
     },
   },
   plugins: [],
