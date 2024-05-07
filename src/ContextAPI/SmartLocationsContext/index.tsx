@@ -30,10 +30,59 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
     }
   };
 
-  function handleFilterByUser(locations: Location[]) {
-    // todo order
-    setFoundSmartLocations(locations);
+  function handleFilterByUser(locations: Location[]) {  
+    if (filterRadioValue === '' && !displayLocationsClosed) {
+      const filteredLocations = locations.filter(location => location.opened);
+      return setFoundSmartLocations(filteredLocations);
+    }
+
+    if (filterRadioValue === '' && displayLocationsClosed)
+      return setFoundSmartLocations(locations);
+
+    const currentSchedule = getCurrentDay();
+      
+    const filteredLocations = locations.reduce((acc: Location[], location: Location) => {
+        let schedule;
+        if (displayLocationsClosed)
+          schedule = location?.schedules?.filter(schedule => schedule.weekdays === currentSchedule);
+        else 
+          schedule = location?.schedules?.filter(schedule => schedule.weekdays === currentSchedule && location.opened);
+
+        if (schedule) {
+            schedule.forEach(scheduleItem => {
+                if (scheduleItem.hour !== 'Fechada') {
+                    const [start, end] = scheduleItem.hour.split(' às ');
+                    const [startHour] = start.split('h');
+                    const [endHour] = end.split('h');
+                    if (filterRadioValue === 'Manhã' && parseInt(startHour) >= 6 || parseInt(endHour) <= 12) {
+                        acc.push(location);
+                    } else if (filterRadioValue === 'Tarde' && parseInt(startHour) >= 12 || parseInt(endHour) <= 18) {
+                        acc.push(location);
+                    } else if (filterRadioValue === 'Noite' && parseInt(startHour) >= 18 || parseInt(endHour) <= 23) {
+                        acc.push(location);
+                    }
+                }
+            });
+        }
+        return acc; 
+    }, []);
+    return setFoundSmartLocations(filteredLocations);
   }
+
+  function getCurrentDay(): string {
+    const currentDay = new Date().getDay();
+
+    if(currentDay > 0 && currentDay < 6)
+      return 'Seg. à Sex.';
+    else if (currentDay === 6) 
+      return 'Sáb.';
+    else 
+      return 'Dom.';
+  }
+
+  useEffect(() => {
+    setTotalLocationsFound(foundSmartLocations.length);
+  }, [foundSmartLocations]);
 
   const value: SmartFitContextType = {
     filterRadioValue,
