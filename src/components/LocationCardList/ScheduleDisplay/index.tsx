@@ -11,7 +11,7 @@ const ScheduleDisplay: React.FC<ScheduleDisplayProps> = ({ schedules }) => {
 
     return schedules.reduce((scheduleGroups: JSX.Element[], schedule, index) => {
       const scheduleItem = (
-        <div key={index}>
+        <div key={index} className='mr-4'>
           <p className='font-gotham-bold'>{schedule.weekdays}</p>
           <p>{schedule.hour}</p>
         </div>

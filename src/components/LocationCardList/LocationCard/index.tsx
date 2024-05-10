@@ -24,18 +24,20 @@ export default function LocationCard({ location }: LocationCardProps) {
     const lockerRoom = location?.locker_room === 'closed' ? forbiddenLockerrom : location?.locker_room === 'partial' ? partialLockerrom  : location.locker_room === 'allowed' ? requiredLockerrom : null;
 
     return (
-        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(300px, 1fr))' className='bg-slate-100'>
-            <Card bgColor=''>
+        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(300px, 1fr))' className='px-4 mb-8'>
+            <Card bgColor='BlackAlpha' className='bg-slate-100 h-[30rem]'>
             <CardHeader>
                 <Heading size='xs'>{location.opened ? <p className='text-green'>Aberto</p>: <p className='text-red'>Fechado</p>}</Heading>
-                <Heading size='md'>{location.title}</Heading>
-                {location?.content && <p dangerouslySetInnerHTML={{__html: location.content }} />}
+                <Heading size='md' className='my-4'>{location.title}</Heading>
+                <p className='font-gotham-light'>
+                    {location?.content && <p dangerouslySetInnerHTML={{__html: location.content }} />}
+                </p>
             </CardHeader>
             <Center px='4'>
-                <Divider borderColor='gray.200' className='w-80'/>
+                <Divider borderColor='gray.400' className='w-80'/>
             </Center>
             <CardBody>
-                <Flex>
+                <Flex className='mb-6'>
                 {location?.mask && mask && <Image src={mask} alt={`Mask ${location.mask}`}  className='size-16 h-16'/> }
                 {location?.towel && towel && <Image src={towel} alt={`Towel ${location.towel}`}  className='size-16 h-16'/> }
                 {location?.fountain && fountain && <Image src={fountain} alt={`Fountain ${location.fountain}`}  className='size-16 h-16'/> }

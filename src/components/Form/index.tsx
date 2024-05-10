@@ -45,7 +45,7 @@ export default function Form(){
               <div className='text-sm opacity-60'>Horário</div>
             </div>
             <FormControl onSubmit={handleSubmitSearch}>
-              <FormLabel as='legend'>Qual período quer treinar?</FormLabel>
+              <FormLabel as='legend'><p className='font-gotham-light text-xl mb-[-1rem] ml-4 mt-6'>Qual período quer treinar?</p></FormLabel>
               <RadioGroup onChange={setFilterRadioValue} value={filterRadioValue}>
                 <VStack 
                   divider={<StackDivider borderColor='gray.200' />} 
@@ -61,13 +61,13 @@ export default function Form(){
                 </VStack>
               </RadioGroup>
               <FormHelperText className='flex justify-between'>
-                <div>
+                <div className='text-base flex justify-center mt-4'>
                   <Checkbox className='mr-2' onChange={() => setDisplayLocationsClosed(!displayLocationsClosed)} />
                   Exibir unidades fechadas
                 </div>
-                <div>Resultados encontrados: {totalLocationsFound}</div>
+                <div className='text-base flex justify-center mt-4'>Resultados encontrados: <b>{totalLocationsFound}</b></div>
               </FormHelperText>
-              <Flex className='justify-center p-4'>
+              <Flex className='justify-center p-4 mt-4'>
                 <ButtonGroup gap='8' className='flex justify-center'>
                   <Button 
                     size='md'
