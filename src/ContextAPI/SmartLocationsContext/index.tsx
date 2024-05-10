@@ -54,12 +54,23 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
                     const [start, end] = scheduleItem.hour.split(' às ');
                     const [startHour] = start.split('h');
                     const [endHour] = end.split('h');
-                    if (filterRadioValue === 'Manhã' && parseInt(startHour) >= 6 || parseInt(endHour) <= 12) {
-                        acc.push(location);
-                    } else if (filterRadioValue === 'Tarde' && parseInt(startHour) >= 12 || parseInt(endHour) <= 18) {
-                        acc.push(location);
-                    } else if (filterRadioValue === 'Noite' && parseInt(startHour) >= 18 || parseInt(endHour) <= 23) {
-                        acc.push(location);
+                    const parsedStartHour = parseInt(startHour);
+                    const parsedEndHour = parseInt(endHour) === 0 ? 24 : parseInt(endHour);
+
+                    const openMorning = parsedStartHour >= 6 && parsedEndHour <= 12;
+                    const openAfternoon = parsedStartHour < 18 && parsedEndHour > 12;
+                    const openNight = parsedStartHour < 24 && parsedEndHour > 18;
+                    
+                    if (filterRadioValue === 'Manhã' && openMorning) {
+                      acc.push(location);
+                  } else if (filterRadioValue === 'Tarde' && openAfternoon) {
+                      acc.push(location);
+                  } else if (filterRadioValue === 'Noite' &&  openNight) {
+                      acc.push(location);
+                  }
+                } else {
+                    if (displayLocationsClosed) {
+                      acc.push(location);
                     }
                 }
             });
