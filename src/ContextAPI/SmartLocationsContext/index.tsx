@@ -19,6 +19,7 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
   const [displayLocationsClosed, setDisplayLocationsClosed] = useState<boolean>(false);
   const [totalLocationsFound, setTotalLocationsFound] = useState<number>(0);
   const [foundSmartLocations, setFoundSmartLocations] = useState<Location[]>([]);
+  const [notFound, setNotFound] = useState<boolean>(false);
 
   async function getSmartFitLocations(): Promise<void> {
     try {
@@ -93,6 +94,7 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
 
   useEffect(() => {
     setTotalLocationsFound(foundSmartLocations.length);
+    foundSmartLocations.length === 0 ? setNotFound(true) : setNotFound(false);
   }, [foundSmartLocations]);
 
   const value: SmartFitContextType = {
@@ -100,6 +102,7 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
     displayLocationsClosed,
     totalLocationsFound,
     foundSmartLocations,
+    notFound,
     setFilterRadioValue,
     setDisplayLocationsClosed,
     getSmartFitLocations

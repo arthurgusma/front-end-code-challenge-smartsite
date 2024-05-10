@@ -6,6 +6,7 @@ export interface SmartFitContextType {
     displayLocationsClosed: boolean;
     totalLocationsFound: number;
     foundSmartLocations: Location[];
+    notFound: boolean
     setFilterRadioValue: (value: string) => void;
     setDisplayLocationsClosed: (value: boolean) => void;
     getSmartFitLocations: () => Promise<void>;

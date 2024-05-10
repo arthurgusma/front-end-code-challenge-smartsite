@@ -24,7 +24,7 @@ export default function LocationCard({ location }: LocationCardProps) {
     const lockerRoom = location?.locker_room === 'closed' ? forbiddenLockerrom : location?.locker_room === 'partial' ? partialLockerrom  : location.locker_room === 'allowed' ? requiredLockerrom : null;
 
     return (
-        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(300px, 1fr))' className='px-4 mb-8'>
+        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(310px, 1fr))' className='px-2 mb-8'>
             <Card bgColor='BlackAlpha' className='bg-slate-100 h-[30rem]'>
             <CardHeader>
                 <Heading size='xs'>{location.opened ? <p className='text-green'>Aberto</p>: <p className='text-red'>Fechado</p>}</Heading>
