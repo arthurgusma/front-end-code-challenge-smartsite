@@ -3,8 +3,8 @@ import { Providers } from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SmartFit - Smart Locations",
-  description: "Smart Locations from SmartFit, find the best gym for you!",
+  title: "SmartFit - Reabertura",
+  description: "Encontra a SmartFit mais próxima e consulta o estado de abertura.",
 };
 
 export default function RootLayout({
