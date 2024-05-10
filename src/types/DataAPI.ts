@@ -7,10 +7,7 @@ export interface Location {
     towel?: string;
     fountain?: string;
     locker_room?: string;
-    schedules?: {
-      weekdays: string;
-      hour: string;
-    }[];
+    schedules?: Schedule[];
     street?: string;
     region?: string;
     city_name?: string;
@@ -28,4 +25,9 @@ export interface ApiResponse {
   
 export interface PageProps {
     locations: Location[];
-  }
+}
+
+export interface Schedule {
+  weekdays: string;
+  hour: string;
+}
