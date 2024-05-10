@@ -1,16 +1,20 @@
 import DescripitionList from "@/components/DescriptionList";
 import Footer from "@/components/Footer";
+import Form from "@/components/Form";
 import Header from "@/components/Header";
-import { ApiResponse } from "../types/DataAPI";
+import { SmartFitProvider } from '../ContextAPI/SmartLocationsContext';
+import LocationCardList from "@/components/LocationCardList";
 
 export default async function Home() {
-    const response = await fetch('https://test-frontend-developer.s3.amazonaws.com/data/locations.json');
-    const { locations }: ApiResponse = await response.json();
-    
+
   return (
     <main>
       <Header />
-      <DescripitionList />
+      <SmartFitProvider>
+        <Form />
+        <DescripitionList />
+        <LocationCardList />
+      </SmartFitProvider>
       <Footer />
     </main>
   );
