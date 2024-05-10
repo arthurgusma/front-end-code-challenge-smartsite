@@ -20,7 +20,7 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
   const [totalLocationsFound, setTotalLocationsFound] = useState<number>(0);
   const [foundSmartLocations, setFoundSmartLocations] = useState<Location[]>([]);
 
-  const getSmartFitLocations = async () => {
+  async function getSmartFitLocations(): Promise<void> {
     try {
       const response = await fetch('https://test-frontend-developer.s3.amazonaws.com/data/locations.json');
       const { locations }: ApiResponse = await response.json();
@@ -30,7 +30,7 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
     }
   };
 
-  function handleFilterByUser(locations: Location[]) {  
+  function handleFilterByUser(locations: Location[]): void {  
     if (filterRadioValue === '' && !displayLocationsClosed) {
       const filteredLocations = locations.filter(location => location.opened);
       return setFoundSmartLocations(filteredLocations);
@@ -66,7 +66,7 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
         }
         return acc; 
     }, []);
-    return setFoundSmartLocations(filteredLocations);
+   setFoundSmartLocations(filteredLocations);
   }
 
   function getCurrentDay(): string {
