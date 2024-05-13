@@ -12,8 +12,6 @@ import {
     StackDivider,
     Checkbox,
     Divider, 
-    Flex, 
-    ButtonGroup,
     Button
   } from '@chakra-ui/react'
 
@@ -60,37 +58,36 @@ export default function Form(){
                   <Divider />
                 </VStack>
               </RadioGroup>
-              <FormHelperText className='flex justify-between'>
+              <FormHelperText className='grid sm:flex justify-between m-0 sm:m-auto'>
                 <div className='text-base flex justify-center mt-4'>
                   <Checkbox className='mr-2' onChange={() => setDisplayLocationsClosed(!displayLocationsClosed)} />
                   Exibir unidades fechadas
                 </div>
                 <div className='text-base flex justify-center mt-4'>Resultados encontrados: <b className='ml-1'>{totalLocationsFound}</b></div>
               </FormHelperText>
-              <Flex className='justify-center p-4 mt-4'>
-                <ButtonGroup gap={[0, 4, 8,8]} className='flex justify-center'>
+              <div className='grid sm:flex justify-center sm:justify-between p-4 mt-4 font-gotham-bold'>
                   <Button 
                     size='md'
                     height='48px'
-                    w={[120, 180, 220, 300]}
+                    w={[300]}
                     border='2px'
                     colorScheme='yellow'
                     borderColor='yellow.400'
                     onClick={handleSubmitSearch}
+                    className='my-4 sm:m-0'
                   >
                     ENCONTRAR UNIDADE
                   </Button>
                   <Button 
                     height='48px'
-                    w={[120, 180, 220, 300]}
+                    w={[300]}
                     border='2px'
                     borderColor='gray.200'
                     backgroundColor='inherit'
                   >
                     LIMPAR
                   </Button>
-                </ButtonGroup>
-              </Flex>
+              </div>
             </FormControl>
           </div>
         </section>
