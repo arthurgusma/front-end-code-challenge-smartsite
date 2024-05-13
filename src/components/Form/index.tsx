@@ -38,8 +38,8 @@ export default function Form(){
     }
 
     return (
-        <section className='flex justify-center py-8'>
-          <div className='w-2/3 border-solid border-4 border-slate-100 p-4'>
+        <section className='py-8'>
+          <div className='border-solid border-4 border-slate-100 p-4'>
             <div className='flex items-center'>
               <Image src={iconHour} alt="clock image" className='size-6 mr-2' />
               <div className='text-sm opacity-60'>Horário</div>
@@ -65,14 +65,14 @@ export default function Form(){
                   <Checkbox className='mr-2' onChange={() => setDisplayLocationsClosed(!displayLocationsClosed)} />
                   Exibir unidades fechadas
                 </div>
-                <div className='text-base flex justify-center mt-4'>Resultados encontrados: <b>{totalLocationsFound}</b></div>
+                <div className='text-base flex justify-center mt-4'>Resultados encontrados: <b className='ml-1'>{totalLocationsFound}</b></div>
               </FormHelperText>
               <Flex className='justify-center p-4 mt-4'>
-                <ButtonGroup gap='8' className='flex justify-center'>
+                <ButtonGroup gap={[0, 4, 8,8]} className='flex justify-center'>
                   <Button 
                     size='md'
                     height='48px'
-                    width='360px'
+                    w={[120, 180, 220, 300]}
                     border='2px'
                     colorScheme='yellow'
                     borderColor='yellow.400'
@@ -82,7 +82,7 @@ export default function Form(){
                   </Button>
                   <Button 
                     height='48px'
-                    width='360px'
+                    w={[120, 180, 220, 300]}
                     border='2px'
                     borderColor='gray.200'
                     backgroundColor='inherit'

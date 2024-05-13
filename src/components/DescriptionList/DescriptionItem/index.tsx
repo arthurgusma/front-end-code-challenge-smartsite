@@ -5,7 +5,7 @@ export default function DescriptionItem({ title, itens }: DescriptionItemProps){
     return (
         <div className="text-center">
          <h1 className="font-gotham-black mb-4">{title}</h1>
-         <div className="flex justify-center">
+         <div className="lg:flex justify-center">
             {itens.map((item, index) => {
               return (
                  <div key={index} className="m-auto mx-2">

@@ -8,7 +8,7 @@ export default function LocationCardList() {
 
     return (
         <section className='flex justify-center'>
-            <div className='flex w-2/3 overflow-x-auto overflow-y-hidden px-[-4rem]'>
+            <div className='flex overflow-x-auto overflow-y-hidden px-[-4rem]'>
                 {notFound ? 
                 <div className='flex justify-center m-auto pb-8'>
                     <p>Nenhuma unidade encontrada</p>

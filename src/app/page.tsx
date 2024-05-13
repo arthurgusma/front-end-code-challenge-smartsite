@@ -10,11 +10,13 @@ export default async function Home() {
   return (
     <main>
       <Header />
+      <div className="md:w-2/3 px-4 m-auto">
       <SmartFitProvider>
         <Form />
         <DescripitionList />
         <LocationCardList />
       </SmartFitProvider>
+      </div>
       <Footer />
     </main>
   );

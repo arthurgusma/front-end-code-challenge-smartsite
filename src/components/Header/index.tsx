@@ -9,7 +9,7 @@ export default function Header() {
                 <Image src={logo} alt='smartfit logo'/>
             </div>
             <div className='mt-12 flex justify-center '>
-                <div className='w-2/3'>
+                <div className='md:w-2/3 px-4'>
                      <h1 className='font-gotham-bold text-4xl py-4'>REABERTURA <br/> SMART FIT</h1>
                      <div className='bg-black border-4 w-20 z-10 my-2'/>
                      <p className='py-4'>
