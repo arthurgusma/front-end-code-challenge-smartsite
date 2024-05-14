@@ -11,6 +11,8 @@ import requiredLockerrom from '../../../../public/_material/images/required-lock
 import partialLockerrom from '../../../../public/_material/images/partial-lockerroom.png';
 import forbiddenLockerrom from '../../../../public/_material/images/forbidden-lockerroom.png';
 
+import DOMPurify from "dompurify";
+
 import { Card, CardBody, CardFooter, CardHeader, Center, Divider, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
 import Image from 'next/image';
 
@@ -23,6 +25,9 @@ export default function LocationCard({ location }: LocationCardProps) {
     const fountain = location?.fountain === 'not_allowed' ? forbiddenFountain : location.fountain === 'partial' ? partialFountain : null;
     const lockerRoom = location?.locker_room === 'closed' ? forbiddenLockerrom : location?.locker_room === 'partial' ? partialLockerrom  : location.locker_room === 'allowed' ? requiredLockerrom : null;
 
+    const htmlContent = location.content;
+    const sanitizedHtmlContent = DOMPurify.sanitize(htmlContent || '');
+
     return (
         <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(310px, 1fr))' className='px-2 mb-8'>
             <Card bgColor='BlackAlpha' className='bg-slate-100 h-[30rem]'>
@@ -30,7 +35,7 @@ export default function LocationCard({ location }: LocationCardProps) {
                 <Heading size='xs'>{location.opened ? <p className='text-green'>Aberto</p>: <p className='text-red'>Fechado</p>}</Heading>
                 <Heading size='md' className='my-4'>{location.title}</Heading>
                 <p className='font-gotham-light'>
-                    {location?.content && <span dangerouslySetInnerHTML={{__html: location.content }} />}
+                    {location?.content && <span dangerouslySetInnerHTML={{__html: sanitizedHtmlContent }} />}
                 </p>
             </CardHeader>
             <Center px='4'>
