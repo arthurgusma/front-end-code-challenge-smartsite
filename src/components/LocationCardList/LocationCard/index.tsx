@@ -30,7 +30,7 @@ export default function LocationCard({ location }: LocationCardProps) {
                 <Heading size='xs'>{location.opened ? <p className='text-green'>Aberto</p>: <p className='text-red'>Fechado</p>}</Heading>
                 <Heading size='md' className='my-4'>{location.title}</Heading>
                 <p className='font-gotham-light'>
-                    {location?.content && <p dangerouslySetInnerHTML={{__html: location.content }} />}
+                    {location?.content && <span dangerouslySetInnerHTML={{__html: location.content }} />}
                 </p>
             </CardHeader>
             <Center px='4'>
