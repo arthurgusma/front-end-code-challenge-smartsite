@@ -35,6 +35,11 @@ export default function Form(){
         getSmartFitLocations();
     }
 
+    function handleClearSearch() {
+        setFilterRadioValue('');
+        setDisplayLocationsClosed(false);
+    }
+
     return (
         <section className='py-8'>
           <div className='border-solid border-4 border-slate-100 p-4'>
@@ -60,7 +65,7 @@ export default function Form(){
               </RadioGroup>
               <FormHelperText className='grid sm:flex justify-between m-0 sm:m-auto'>
                 <div className='text-base flex justify-center mt-4'>
-                  <Checkbox className='mr-2' onChange={() => setDisplayLocationsClosed(!displayLocationsClosed)} />
+                  <Checkbox className='mr-2' isChecked={displayLocationsClosed} onChange={() => setDisplayLocationsClosed(!displayLocationsClosed)} />
                   Exibir unidades fechadas
                 </div>
                 <div className='text-base flex justify-center mt-4'>Resultados encontrados: <b className='ml-1'>{totalLocationsFound}</b></div>
@@ -84,6 +89,7 @@ export default function Form(){
                     border='2px'
                     borderColor='gray.200'
                     backgroundColor='inherit'
+                    onClick={handleClearSearch}
                   >
                     LIMPAR
                   </Button>
