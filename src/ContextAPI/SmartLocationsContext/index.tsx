@@ -42,15 +42,18 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
       return setFoundSmartLocations(filteredLocations);
     }
 
+    const currentSchedule = getCurrentDay();
+
     const filteredLocations = locations.reduce((acc: Location[], location: Location) => {
         let schedule;
         if (displayLocationsClosed)
-          schedule = location?.schedules?.filter(schedule => !location.opened && schedule.weekdays);
+          schedule = location?.schedules?.filter(schedule => !location.opened && schedule.weekdays === currentSchedule);
         else
-          schedule = location?.schedules?.filter(schedule => location.opened && schedule.weekdays);
+          schedule = location?.schedules?.filter(schedule => location.opened && schedule.weekdays === currentSchedule);
 
         if (schedule) {
             schedule.forEach(scheduleItem => {
+              console.log()
                 if (scheduleItem.hour !== 'Fechada') {
                     const [start, end] = scheduleItem.hour.split(' às ');
                     const [startHour] = start.split('h');
@@ -79,6 +82,17 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
         return acc; 
     }, []);
    setFoundSmartLocations(filteredLocations);
+  }
+
+  function getCurrentDay(): string {
+    const currentDay = new Date().getDay();
+
+    if(currentDay > 0 && currentDay < 6)
+      return 'Seg. à Sex.';
+    else if (currentDay === 6) 
+      return 'Sáb.';
+    else 
+      return 'Dom.';
   }
 
   useEffect(() => {
