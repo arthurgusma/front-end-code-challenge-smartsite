@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <main>
       <Header />
-      <div className="md:w-2/3 px-4 m-auto">
+      <div className="md:w-2/3 px-4 m-auto xl:max-w-7xl">
       <SmartFitProvider>
         <Form />
         <DescripitionList />
