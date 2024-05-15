@@ -1,3 +1,6 @@
+// this test would work perfectly with the correct API Service,
+// wich receveis form filter as param from the user and returns the filtered locations
+
 describe('Form Submission Test', () => {
   beforeEach(() => {
     cy.visit('localhost:3000');
