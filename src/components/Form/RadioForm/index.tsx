@@ -9,7 +9,7 @@ interface RadioFormProps {
 export default function RadioForm({ value, textLeft, textRight}: RadioFormProps) {
     return (
         <Flex >
-            <Radio value={value} className='mr-2'/>
+            <Radio value={value} className='mr-2' name='radio-option'/>
             {textLeft && <Text fontSize='sm'>{textLeft}</Text>}
             <Spacer />
             {textRight && <Text fontSize='sm'>{textRight}</Text>}

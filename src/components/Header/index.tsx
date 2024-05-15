@@ -4,7 +4,7 @@ import logo from '../../../public/_material/images/logo.svg';
 
 export default function Header() {
     return (
-        <header>
+        <header id='main-header'>
             <div className='bg-black flex justify-center p-8 m-auto'>
                 <Image src={logo} alt='smartfit logo'/>
             </div>

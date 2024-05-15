@@ -65,7 +65,7 @@ export default function Form(){
               </RadioGroup>
               <FormHelperText className='grid sm:flex justify-between m-0 sm:m-auto'>
                 <div className='text-base flex justify-center mt-4'>
-                  <Checkbox className='mr-2' isChecked={displayLocationsClosed} onChange={() => setDisplayLocationsClosed(!displayLocationsClosed)} />
+                  <Checkbox className='mr-2' name='checkbox-option' isChecked={displayLocationsClosed} onChange={() => setDisplayLocationsClosed(!displayLocationsClosed)} />
                   Exibir unidades fechadas
                 </div>
                 <div className='text-base flex justify-center mt-4'>Resultados encontrados: <b className='ml-1'>{totalLocationsFound}</b></div>
@@ -80,6 +80,7 @@ export default function Form(){
                     borderColor='yellow.400'
                     onClick={handleSubmitSearch}
                     className='my-4 sm:m-0'
+                    type='submit'
                   >
                     ENCONTRAR UNIDADE
                   </Button>

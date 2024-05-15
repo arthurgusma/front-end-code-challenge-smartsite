@@ -5,6 +5,7 @@ import LocationCard from "./LocationCard";
 
 export default function LocationCardList() {
     const { foundSmartLocations, notFound } = useSmartFitContext();
+    console.log(notFound);
 
     return (
         <section className='grid sm:flex justify-center'>

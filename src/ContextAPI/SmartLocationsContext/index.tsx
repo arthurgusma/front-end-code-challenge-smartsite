@@ -19,7 +19,7 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
   const [displayLocationsClosed, setDisplayLocationsClosed] = useState<boolean>(false);
   const [totalLocationsFound, setTotalLocationsFound] = useState<number>(0);
   const [foundSmartLocations, setFoundSmartLocations] = useState<Location[]>([]);
-  const [notFound, setNotFound] = useState<boolean>(false);
+  const [notFound, setNotFound] = useState<boolean>(true);
 
   async function getSmartFitLocations(): Promise<void> {
     try {
