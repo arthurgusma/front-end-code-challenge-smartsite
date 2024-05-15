@@ -1,7 +1,7 @@
 # Challenge SmartFit
 
 ## Introduction
-This is a forked front-end challenge, where I used Next.JS with Typescript to solve it.
+This is a forked front-end challenge, where I've used Next.JS with Typescript to solve it.
 
 ## Access the Deployed Site
 You can access the deployed version of the application by following this link: [Challenge SmartSite](https://challenge-smartsite.vercel.app).
@@ -13,13 +13,14 @@ Before you begin, ensure you have met the following requirements:
 - Node.js installed on your local machine
 - npm package manager (usually comes with Node.js installation)
 - Git (if cloning the repository)
-
+- Docker installed on your local machine (only if running with docker)
+    
 ## Getting Started
 To get a local copy up and running follow these simple steps:
 
 1. **Clone the Repository:**
    ```sh
-   git clone <repository_url>
+   git clone https://github.com/arthurgusma/front-end-code-challenge-smartsite.git
 
 2. **Navigate to the Project Directory:**
    cd challenge-smartfit
@@ -27,11 +28,17 @@ To get a local copy up and running follow these simple steps:
 3. **Install Dependencies:**
     npm install
 
+4. **Run the Development Server:**
+    npm run dev
+
+5. **Access the Application:**
+    Open your web browser and navigate to http://localhost:3000 to access the application.
+
 ## Running with Docker
 
 1. **Clone the Repository:**
    ```sh
-   git clone <repository_url>
+   git clone https://github.com/arthurgusma/front-end-code-challenge-smartsite.git
 
 2. **Navigate to the Project Directory:**
    cd challenge-smartfit
@@ -45,15 +52,8 @@ To get a local copy up and running follow these simple steps:
 5. **Access the Application:**
     Once the container is running, open your web browser and navigate to http://localhost:3000 to access the application.
 
-## Usage
-
-1. **Run the Development Server:**
-    npm run dev
-
-2. **Access the Application:**
-    Open your web browser and navigate to http://localhost:3000 to access the application.
-
 ## ORIGINAL README BELOW
+
 
 # Front-end Smart Fit
 > Esse é um pequeno projeto criado como base para a avaliação de habilidades técnicas para o papel de Front-end.
