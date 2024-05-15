@@ -53,7 +53,6 @@ export const SmartFitProvider: React.FC<SmartFitProviderProps> = ({ children }) 
 
         if (schedule) {
             schedule.forEach(scheduleItem => {
-              console.log()
                 if (scheduleItem.hour !== 'Fechada') {
                     const [start, end] = scheduleItem.hour.split(' às ');
                     const [startHour] = start.split('h');
