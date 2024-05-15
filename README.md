@@ -1,3 +1,60 @@
+# Challenge SmartFit
+
+## Introduction
+This is a forked front-end challenge, where I used Next.JS with Typescript to solve it.
+
+## Access the Deployed Site
+You can access the deployed version of the application by following this link: [Challenge SmartSite](https://challenge-smartsite.vercel.app).
+
+Feel free to explore the live version of the application!
+
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
+- Node.js installed on your local machine
+- npm package manager (usually comes with Node.js installation)
+- Git (if cloning the repository)
+
+## Getting Started
+To get a local copy up and running follow these simple steps:
+
+1. **Clone the Repository:**
+   ```sh
+   git clone <repository_url>
+
+2. **Navigate to the Project Directory:**
+   cd challenge-smartfit
+
+3. **Install Dependencies:**
+    npm install
+
+## Running with Docker
+
+1. **Clone the Repository:**
+   ```sh
+   git clone <repository_url>
+
+2. **Navigate to the Project Directory:**
+   cd challenge-smartfit
+
+3. **Build the Docker Image:**
+    docker build -t challenge-smartfit .
+
+4. **Run the Docker Container:**
+    docker run -d -p 3000:3000 challenge-smartfit
+
+5. **Access the Application:**
+    Once the container is running, open your web browser and navigate to http://localhost:3000 to access the application.
+
+## Usage
+
+1. **Run the Development Server:**
+    npm run dev
+
+2. **Access the Application:**
+    Open your web browser and navigate to http://localhost:3000 to access the application.
+
+## ORIGINAL README BELOW
+
 # Front-end Smart Fit
 > Esse é um pequeno projeto criado como base para a avaliação de habilidades técnicas para o papel de Front-end.
 
