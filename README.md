@@ -1,5 +1,9 @@
 # Challenge SmartFit
 
+# Preview
+
+![preview](preview.png)
+
 ## Introduction
 This is a forked front-end challenge, where I've used Next.JS with Typescript to solve it.
 
@@ -57,10 +61,6 @@ To get a local copy up and running follow these simple steps:
 
 # Front-end Smart Fit
 > Esse é um pequeno projeto criado como base para a avaliação de habilidades técnicas para o papel de Front-end.
-
-# Preview
-
-![preview](preview.png)
 
 # Proposta de Teste
 > A Smart Fit, por atuar no segmento de fitness, passou por várias mudanças na pandemia. Foi necessário desenvolver uma página para buscar unidades **fechadas** ou **abertas** para consulta e reserva.
